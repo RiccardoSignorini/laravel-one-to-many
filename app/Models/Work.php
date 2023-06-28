@@ -17,5 +17,10 @@ class Work extends Model
         'description',
         'image',
         'creation_date',
+        'category_id',
     ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

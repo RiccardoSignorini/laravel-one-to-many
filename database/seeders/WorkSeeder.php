@@ -17,7 +17,7 @@ class WorkSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for($i=0; $i<10; $i++){
+        for($i=0; $i<=10; $i++){
             $newWork = new Work();
             $newWork->title = $faker->sentence(1);
             $newWork->lenguages = $faker->randomElement(['Html', 'Css', 'Javascript', 'Vue', 'Php', 'Laravel']);
