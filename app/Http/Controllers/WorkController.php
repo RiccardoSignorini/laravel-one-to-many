@@ -72,7 +72,9 @@ class WorkController extends Controller
      */
     public function edit(Work $work)
     {
-        return view('pages.works.edit', compact('work'));
+        $categories = Category::all();
+
+        return view('pages.works.edit', compact('work', 'categories'));
     }
 
     /**

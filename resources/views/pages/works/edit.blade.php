@@ -33,9 +33,15 @@
                 <input class="form-control" type="text" name="image" value="{{old('image') ?? $work->image}}">
             </div>
 
+            {{-- ONE-TO-MANY --}}
             <div class="form-group my-2">
-                <label class="form-label" for="">CREATION DATE</label>
-                <input class="form-control" type="text" name="creation_date" value="{{old('creation_date') ?? $work->creation_date}}">
+                <label class="form-label" for="">SELECT CATEGORY</label>
+                <select class="form-select" aria-label="Disabled select example" name="category_id">
+                    <option selected value="">Open this select menu</option>
+                    @foreach ($categories as $elem)
+                        <option value="{{$elem->id}}" {{old('category_id', $work->category_id) == $elem->id ? 'selected' : ''}}>{{$elem->name}}</option>    
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary my-3">CHANGE PROJECT</button>
