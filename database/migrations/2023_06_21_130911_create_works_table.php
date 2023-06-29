@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
-            $table->string('lenguages')->unique();
+            $table->string('title');
+            $table->string('lenguages');
             $table->text('description')->nullable();
             $table->string('image');
             $table->timestamp('creation_date')->nullable();

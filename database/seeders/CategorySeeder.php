@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for($i=0; $i<=10; $i++){
+        for($i=0; $i<10; $i++){
             $newCategory = new Category();
             $newCategory->name = $faker->sentence(2);
             $newCategory->slug = Str::slug($newCategory->name); 
