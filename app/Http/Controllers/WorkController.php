@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,9 @@ class WorkController extends Controller
      */
     public function create()
     {
-        return view('pages.works.create');
+        $categories = Category::all();
+
+        return view('pages.works.create', compact('categories'));
     }
 
     /**
